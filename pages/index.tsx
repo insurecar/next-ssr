@@ -6,6 +6,7 @@ import styles from "@/styles/Home.module.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home(): JSX.Element {
+  const a = 1;
   return (
     <>
       <Head>
@@ -115,6 +116,7 @@ export default function Home(): JSX.Element {
               Instantly deploy your Next.js site to a shareable URL
               with&nbsp;Vercel.
             </p>
+            {a}
           </a>
         </div>
       </main>
