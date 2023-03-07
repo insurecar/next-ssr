@@ -1,9 +1,10 @@
 import React from "react";
 import { Htag, Button, P, Tag, Rating } from "../components";
+import { Layout } from "@/layout/Layout";
 
 export default function Home(): JSX.Element {
   return (
-    <div>
+    <Layout>
       <Htag tag="h3">text</Htag>
       <Button appearence="primary" arrow="right">
         qwer
@@ -13,6 +14,6 @@ export default function Home(): JSX.Element {
         sdg
       </Tag>
       <Rating rating={2} />
-    </div>
+    </Layout>
   );
 }
