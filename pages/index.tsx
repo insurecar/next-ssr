@@ -19,7 +19,7 @@ function Home({ menu }: HomeProps): JSX.Element {
       <Rating rating={4} />
       <ul>
         {menu.map((m) => (
-          <li key={m._id.secondCategory}>{m._id.secondCategory} sdfsdfsf</li>
+          <li key={m._id.secondCategory}>{m._id.secondCategory}</li>
         ))}
       </ul>
     </>
