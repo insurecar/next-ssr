@@ -11,7 +11,12 @@ const firstCategory = 0;
 
 const Courses = ({ menu, page, products }: CoursesProps): JSX.Element => {
   console.log(menu);
-  return <>{products.length}</>;
+  console.log("page___", page);
+  return (
+    <div>
+      <div>{products.length}</div>
+    </div>
+  );
 };
 
 export default withLayout(Courses);
@@ -23,13 +28,14 @@ export const getStaticPaths: GetStaticPaths = async () => {
   );
   return {
     paths: menu.flatMap((m) => m.pages.map((p) => "/courses/" + p.alias)),
-    fallback: true,
+    fallback: false,
   };
 };
 
 export const getStaticProps: GetStaticProps<CoursesProps> = async ({
   params,
 }: GetStaticPropsContext<ParsedUrlQuery>) => {
+  console.log("%c WHERE THIS PARAMS", "background: coral; color:red", params);
   if (!params) {
     return {
       notFound: true,
@@ -45,7 +51,7 @@ export const getStaticProps: GetStaticProps<CoursesProps> = async ({
   );
 
   const { data: products } = await axios.post<ProductModel[]>(
-    process.env.NEXT_PUBLIC_DOMAIN + "/api/top-page//product/find",
+    process.env.NEXT_PUBLIC_DOMAIN + "/api/product/find",
     {
       category: page.category,
       limit: 10,
