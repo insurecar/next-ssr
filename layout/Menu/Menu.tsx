@@ -9,6 +9,7 @@ import BooksIcon from "./icons/books.svg";
 import ProductsIcon from "./icons/products.svg";
 import cn from "classnames";
 import styles from "./Menu.module.css";
+import Link from "next/link";
 
 export const firstLevelMenu: FirstLevelMenuItem[] = [
   {
@@ -43,7 +44,7 @@ export const Menu = (): JSX.Element => {
       <>
         {firstLevelMenu.map((m) => (
           <div key={m.route}>
-            <a href={`/${m.route}`}>
+            <Link href={`/${m.route}`}>
               <div
                 className={cn(styles.firstLevel, {
                   [styles.firstLevelActive]: m.id == firstCategory,
@@ -52,7 +53,8 @@ export const Menu = (): JSX.Element => {
                 {m.icon}
                 <span>{m.name}</span>
               </div>
-            </a>
+            </Link>
+
             {m.id == firstCategory && buildSecondLevel(m)}
           </div>
         ))}
@@ -81,14 +83,15 @@ export const Menu = (): JSX.Element => {
 
   const buildThirdLevel = (pages: PageItem[], route: string) =>
     pages.map((p) => (
-      <a
-        href={`/${route}/${p.alias}`}
-        className={cn(styles.thirdLevel, {
-          [styles.thirdLevelActive]: false,
-        })}
-      >
-        {p.category}
-      </a>
+      <Link href={`/${route}/${p.alias}`}>
+        <span
+          className={cn(styles.thirdLevel, {
+            [styles.thirdLevelActive]: false,
+          })}
+        >
+          {p.category}
+        </span>
+      </Link>
     ));
 
   const { menu, setMenu, firstCategory } = useContext(AppContext);
