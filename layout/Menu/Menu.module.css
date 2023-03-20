@@ -36,6 +36,14 @@
 	border-left: 1px solid #DFDFDF;
 }
 
+.secondLevelBlock{
+  display: none;
+}
+
+.secondLevelBlockOpened{
+  display: block;
+}
+
 .secondLevelBlockOpened:last-child {
 	margin-bottom: 20px;
 }
@@ -45,6 +53,8 @@
 	display: block;
 	cursor: pointer;
 	color: var(--gray-dark);
+  /* color: red; */
+  /* display: none; */
 	font-weight: 500;
 	font-size: 14px;
 	line-height: 19px;
