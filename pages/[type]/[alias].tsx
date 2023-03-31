@@ -32,7 +32,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
       ))
     );
   }
-  // console.log("PATHES", paths);
 
   return {
     paths,
@@ -43,7 +42,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps<CoursesProps> = async ({
   params,
 }: GetStaticPropsContext<ParsedUrlQuery>) => {
-  // console.log("%c WHERE THIS PARAMS", "background: coral; color:red", params);
   if (!params) {
     return {
       notFound: true,

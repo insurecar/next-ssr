@@ -12,7 +12,6 @@ export const Menu = (): JSX.Element => {
   const { menu, setMenu, firstCategory } = useContext(AppContext);
 
   const router = useRouter();
-  console.log(router);
 
   const openSecondLevel = (secondCategory: string) => {
     setMenu &&
@@ -98,8 +97,6 @@ export const Menu = (): JSX.Element => {
         {/* </span> */}
       </Link>
     ));
-
-  console.log(menu);
 
   return <div className={styles.menu}>{buildFirstLevel()}</div>;
 };
