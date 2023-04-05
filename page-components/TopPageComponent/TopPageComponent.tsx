@@ -41,7 +41,12 @@ export const TopPageComponent = ({
           <Advantages advantages={page.advantages} />
         </>
       )}
-      {page.seoText && <P>{page.seoText}</P>}
+      {page.seoText && (
+        <div
+          className={styles.seo}
+          dangerouslySetInnerHTML={{ __html: page.seoText }}
+        />
+      )}
       <Htag tag="h2">Отримані навики</Htag>
       {page.tags.map((t) => (
         <Tag color="primary" key={t}>
