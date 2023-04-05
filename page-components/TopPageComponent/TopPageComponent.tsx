@@ -1,9 +1,10 @@
 import React from "react";
 import cn from "classnames";
 import { TopPageComponentProps } from "./TopPageComponent.props";
-import { Card, HhData, Htag, Tag } from "@/components";
+import { Card, HhData, Htag, P, Tag } from "@/components";
 import styles from "./TopPageComponent.module.css";
 import { TopLevelCategory } from "@/interfaces/page.interface";
+import { Advantages } from "@/components";
 
 export const TopPageComponent = ({
   page,
@@ -31,7 +32,22 @@ export const TopPageComponent = ({
           hh.ua
         </Tag>
       </div>
-      {firstCategory == TopLevelCategory.Courses && <HhData {...page.hh} />}
+      {firstCategory == TopLevelCategory.Courses && page.hh && (
+        <HhData {...page.hh} />
+      )}
+      {page.advantages && page.advantages.length > 0 && (
+        <>
+          <Htag tag="h2">Переваги</Htag>
+          <Advantages advantages={page.advantages} />
+        </>
+      )}
+      {page.seoText && <P>{page.seoText}</P>}
+      <Htag tag="h2">Отримані навики</Htag>
+      {page.tags.map((t) => (
+        <Tag color="primary" key={t}>
+          {t}
+        </Tag>
+      ))}
     </div>
   );
 };
