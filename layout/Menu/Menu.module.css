@@ -37,11 +37,11 @@
 }
 
 .secondLevelBlock{
-  display: none;
+	display: none;
 }
 
 .secondLevelBlockOpened{
-  display: block;
+	display: block;
 }
 
 .secondLevelBlockOpened:last-child {
@@ -53,8 +53,10 @@
 	display: block;
 	cursor: pointer;
 	color: var(--gray-dark);
-  /* color: red; */
-  /* display: none; */
+
+	/* color: red; */
+
+	/* display: none; */
 	font-weight: 500;
 	font-size: 14px;
 	line-height: 19px;
