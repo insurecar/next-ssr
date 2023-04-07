@@ -36,7 +36,7 @@ export const Sort = ({
         aria-labelledby="sort price"
       >
         <SortIcon className={styles.sortIcon} />
-        По цене
+        По ціні
       </button>
     </div>
   );
